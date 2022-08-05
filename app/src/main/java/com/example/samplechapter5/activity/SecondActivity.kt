@@ -4,11 +4,33 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.samplechapter5.R
+import com.example.samplechapter5.databinding.ActivitySecondBinding
+import com.example.samplechapter5.model.User
+import com.example.samplechapter5.model.UserParcelize
 
 class SecondActivity : AppCompatActivity() {
+
+    companion object{
+        val KEY_NAME_DATA = "dataFromMainPage"
+        val KEY_USER = "KEY_USER"
+        val KEY_USER_PARCELIZE = "KEY_USER_PARCELIZE"
+
+    }
+
+    var binding: ActivitySecondBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+        binding = ActivitySecondBinding.inflate(layoutInflater)
+        setContentView(binding?.root)
+
+        val data = intent.getStringExtra(KEY_NAME_DATA)
+        val user = intent.getSerializableExtra(KEY_USER) as User
+
+        val userParcelize = intent.getParcelableExtra<UserParcelize>(KEY_USER_PARCELIZE)
+
+        binding?.apply {
+            tvShowData.text = userParcelize?.name.orEmpty()
+        }
         Log.d("TESSLIFCYCLE", "onCreate")
 
     }

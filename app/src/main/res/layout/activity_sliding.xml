@@ -5,11 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SecondActivity">
-
-    <TextView
-        android:id="@+id/tvShowData"
+    tools:context=".activity.SlidingActivity"
+    android:orientation="vertical">
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tlFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Tess"/>
+        android:background="@color/teal_200"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </LinearLayout>

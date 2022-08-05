@@ -1,24 +1,19 @@
 package com.example.samplechapter5.activity
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.samplechapter5.databinding.ActivityMainBinding
+import com.example.samplechapter5.R
+import com.example.samplechapter5.fragment.SampleFragment
 
-class MainActivity : AppCompatActivity() {
-
-
-    var binding: ActivityMainBinding? = null
+class ContainerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding?.root)
-        binding?.btnGotoPage2?.setOnClickListener {
-            var intentGotoPage2 = Intent(this, SecondActivity::class.java)
-            startActivity(intentGotoPage2)
-
-        }
+        setContentView(R.layout.activity_container)
+//        val fragmentTransaction = supportFragmentManager.beginTransaction()
+//        val sampleFragment = SampleFragment()
+//        fragmentTransaction.add(R.id.fcvSample,sampleFragment)
+//        fragmentTransaction.commit()
         Log.d("TESSLIFCYCLE1", "onCreate")
     }
 
