@@ -47,9 +47,12 @@ class SampleIntentActivity : AppCompatActivity() {
                 val userParcelize = UserParcelize("Binor","Laki-Laki")
 
                 val intentPage2= Intent(this@SampleIntentActivity,SecondActivity::class.java)
-                intentPage2.putExtra(KEY_NAME_DATA,"From Main Page")
-                intentPage2.putExtra(KEY_USER,user)
-                intentPage2.putExtra(KEY_USER_PARCELIZE,userParcelize)
+                val bundle = Bundle()
+                bundle.putString(KEY_NAME_DATA,"From Main Page")
+                intentPage2.putExtras(bundle)
+//                intentPage2.putExtra(KEY_NAME_DATA,"From Main Page")
+//                intentPage2.putExtra(KEY_USER,user)
+//                intentPage2.putExtra(KEY_USER_PARCELIZE,userParcelize)
                 startActivity(intentPage2)
             }
         }

@@ -5,11 +5,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SecondActivity">
+    tools:context=".activity.SecondActivity"
+    android:orientation="vertical"
+    android:gravity="center">
 
     <TextView
         android:id="@+id/tvShowData"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Tess"/>
+
+    <Button
+        android:id="@+id/btnStandardDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_show_standard_dialog"/>
+
+    <Button
+        android:id="@+id/btnCustomDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_show_custom_dialog"/>
 </LinearLayout>

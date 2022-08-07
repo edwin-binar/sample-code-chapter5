@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.samplechapter5.R
+import com.example.samplechapter5.dialog.CustomSampleDialog
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,6 +41,10 @@ class SampleFragment : Fragment() {
     ): View? {
         Log.d("TESSFRAGMENT","onCreateView")
         return inflater.inflate(R.layout.fragment_sample, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
     companion object {
