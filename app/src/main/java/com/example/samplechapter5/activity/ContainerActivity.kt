@@ -10,10 +10,10 @@ class ContainerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_container)
-//        val fragmentTransaction = supportFragmentManager.beginTransaction()
-//        val sampleFragment = SampleFragment()
-//        fragmentTransaction.add(R.id.fcvSample,sampleFragment)
-//        fragmentTransaction.commit()
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        val sampleFragment = SampleFragment()
+        fragmentTransaction.add(R.id.fcvSample,sampleFragment)
+        fragmentTransaction.commit()
         Log.d("TESSLIFCYCLE1", "onCreate")
     }
 
