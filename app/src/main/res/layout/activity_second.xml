@@ -26,4 +26,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_show_custom_dialog"/>
+
+    <Button
+        android:id="@+id/btnShowToast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_show_toast"/>
+
+    <Button
+        android:id="@+id/btnShowSnackbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_show_snacbar"/>
 </LinearLayout>

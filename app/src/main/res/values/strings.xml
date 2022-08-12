@@ -6,4 +6,6 @@
     <string name="text_share_whatsapp">Share WhatsApp</string>
     <string name="text_show_standard_dialog">Show Standard Dialog</string>
     <string name="text_show_custom_dialog">Custom Dialog</string>
+    <string name="text_show_toast">Show Toast</string>
+    <string name="text_show_snacbar">Show Snackbar</string>
 </resources>

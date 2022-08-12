@@ -7,12 +7,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.samplechapter5.R
 import com.example.samplechapter5.databinding.ActivitySecondBinding
 import com.example.samplechapter5.dialog.CustomSampleDialog
 import com.example.samplechapter5.model.User
 import com.example.samplechapter5.model.UserParcelize
+import com.google.android.material.snackbar.Snackbar
 
 class SecondActivity : AppCompatActivity() {
 
@@ -47,6 +49,20 @@ class SecondActivity : AppCompatActivity() {
 //                shoCustomDialog()
                 showCustomDialogFragment()
             }
+
+            btnShowToast.setOnClickListener {
+                Toast.makeText(this@SecondActivity,"Sample Message Toast",Toast.LENGTH_LONG).show()
+            }
+
+            btnShowSnackbar.setOnClickListener {
+                val snackbar = Snackbar.make(it,"Sample Message Snackbar",Snackbar.LENGTH_INDEFINITE)
+
+                snackbar.setAction("Close") {
+                    snackbar.dismiss()
+                }
+                snackbar.show()
+            }
+
         }
         Log.d("TESSLIFCYCLE", "onCreate")
 
