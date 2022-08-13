@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.samplechapter5">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -19,7 +18,13 @@
         android:theme="@style/Theme.SampleChapter5"
         tools:targetApi="31">
         <activity
+            android:name=".activity.ThirdActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.SampleNetworkActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".activity.SampleIntentActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,14 +33,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.SampleIntentActivity"
-            android:exported="true"></activity>
-        <activity
             android:name=".activity.SlidingActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".activity.ContainerActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".activity.SecondActivity"
             android:exported="true">

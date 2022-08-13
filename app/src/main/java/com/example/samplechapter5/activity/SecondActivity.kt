@@ -2,8 +2,10 @@ package com.example.samplechapter5.activity
 
 import android.app.Dialog
 import android.content.DialogInterface
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.ViewGroup
 import android.widget.Button
@@ -25,6 +27,9 @@ class SecondActivity : AppCompatActivity() {
     }
 
     var binding: ActivitySecondBinding? = null
+
+    var data = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySecondBinding.inflate(layoutInflater)
@@ -33,14 +38,11 @@ class SecondActivity : AppCompatActivity() {
 //        val data = intent.getStringExtra(KEY_NAME_DATA)
 //        val user = intent.getSerializableExtra(KEY_USER) as User
 
-        val bundle = intent.extras
-        val data = bundle?.getString(KEY_NAME_DATA).orEmpty()
-
+        data = intent.getStringExtra(KEY_NAME_DATA).orEmpty()
 
         val userParcelize = intent.getParcelableExtra<UserParcelize>(KEY_USER_PARCELIZE)
 
         binding?.apply {
-            tvShowData.text = data
             btnStandardDialog.setOnClickListener {
                 showDialogStandard()
             }
@@ -55,10 +57,12 @@ class SecondActivity : AppCompatActivity() {
             }
 
             btnShowSnackbar.setOnClickListener {
-                val snackbar = Snackbar.make(it,"Sample Message Snackbar",Snackbar.LENGTH_INDEFINITE)
+                val snackbar = Snackbar.make(it,"Go to Page 3",Snackbar.LENGTH_INDEFINITE)
 
-                snackbar.setAction("Close") {
-                    snackbar.dismiss()
+                snackbar.setAction("Oke") {
+                    Intent(this@SecondActivity,ThirdActivity::class.java).apply {
+                        startActivity(this)
+                    }
                 }
                 snackbar.show()
             }
@@ -103,6 +107,15 @@ class SecondActivity : AppCompatActivity() {
         dialog.show()
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(KEY_NAME_DATA,data)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        data = savedInstanceState.getString(KEY_NAME_DATA).orEmpty()
+    }
+
     fun showCustomDialogFragment(){
         val dialog = CustomSampleDialog("Tess")
         dialog.show(supportFragmentManager,"CustomSampleDialog")
@@ -116,6 +129,7 @@ class SecondActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         Log.d("TESSLIFCYCLE", "onResume")
+        binding?.tvShowData?.text = data
 
     }
 

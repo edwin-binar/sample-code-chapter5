@@ -8,4 +8,5 @@
     <string name="text_show_custom_dialog">Custom Dialog</string>
     <string name="text_show_toast">Show Toast</string>
     <string name="text_show_snacbar">Show Snackbar</string>
+    <string name="send_data_to_activity">Send Data To Activity</string>
 </resources>
